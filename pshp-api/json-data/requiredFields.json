@@ -1,0 +1,206 @@
+{
+    "id": "/RequiredFields",
+    "type": "object",
+    "properties": {
+        "customerId": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "salutation": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "firstname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "middlename": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "lastname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "gender": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "phResident": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "birthday": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "age": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "location": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "email": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "mobileno": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "plan": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "planName": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "annualRate": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "modeOfPayment": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "sumAssured": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "modeAmount": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "modeAnnualAmount": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "height": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "weight": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "needs": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "civilStatus": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "country": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "occupationCode": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "natureOfWork": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "employer": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "natureOfEmployerBusiness": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "permanentAddress": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "permanentLocation": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "presentAddress": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "presentLocation": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "presentZipcode": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "firstBeneFirstname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "firstBeneLastname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "agentStatus": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "idType": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "idNo": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "placeSigned": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        },
+        "agreedOnMedInfo": {
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        }
+    }
+}

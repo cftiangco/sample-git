@@ -1,0 +1,7 @@
+{
+  "watch": ["/usr/src/work"],
+  "ext": "ts,js,json,html,htm",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "sh ./restart.sh",
+  "env": {}
+}

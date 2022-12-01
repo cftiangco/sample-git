@@ -1,0 +1,38 @@
+{
+   "500K": {
+      "Base SA": 500000,
+      "ADD SA": 500000,
+      "TPD SA": 250000,
+      "WPTPD": "Attached"
+   },
+   "1M": {
+      "Base SA": 1000000,
+      "ADD SA": 1000000,
+      "TPD SA": 500000,
+      "WPTPD": "Attached"
+   },
+   "1.5M": {
+      "Base SA": 1500000,
+      "ADD SA": 1500000,
+      "TPD SA": 750000,
+      "WPTPD": "Attached"
+   },
+   "2M": {
+      "Base SA": 2000000,
+      "ADD SA": 2000000,
+      "TPD SA": 1000000,
+      "WPTPD": "Attached"
+   },
+   "2.5M": {
+      "Base SA": 2500000,
+      "ADD SA": 2500000,
+      "TPD SA": 1250000,
+      "WPTPD": "Attached"
+   },
+   "3M": {
+      "Base SA": 3000000,
+      "ADD SA": 3000000,
+      "TPD SA": 1500000,
+      "WPTPD": "Attached"
+   }
+}
