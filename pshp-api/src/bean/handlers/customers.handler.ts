@@ -6,6 +6,11 @@ import { CustomerHelper } from './utils/customer.helper';
 import * as moment from 'moment';
 import { PolicyHelper } from './utils/policy.helper';
 import { PremiumHelper} from "../helpers/premium.helper";
+/* CRIMSON */
+import * as fs from 'fs';
+const CreateCustomerValidation = JSON.parse(fs.readFileSync('/usr/src/app/json-data/createCustomerValidation.json','utf8'));
+const UpdateCustomerValidation = JSON.parse(fs.readFileSync('/usr/src/app/json-data/updateCustomerValidation.json','utf8'));
+/* CRIMSON */
 
 export class CustomersHandler implements Handler{
     private static _instance: CustomersHandler;
@@ -63,6 +68,22 @@ export class CustomersHandler implements Handler{
                     };
 
                     user.activity = activity;
+
+                    /* == INPUT VALIDATION == */
+                    let vo: any = data;
+
+                    let validator = conn.getValidator();
+                    var vres =validator.validate(vo,CreateCustomerValidation);
+
+                    if(!vres.valid) {
+                        console.log(`ajv errors:`,vres);
+                        let err = vres.errors.map((e) => e.schema.errorMessage ?? e.stack);
+                        activity.response = { isSucces: false, success: false, message: 'create.failed', result: "there are missing(required) or invalid input customer data", errors:err};
+                        AppHelper.log('CREATE CUSTOMER', activity );
+                        callback(activity.response);
+                        return;
+                    }
+                    /* == INPUT VALIDATION == */
 
                     if(data.hasOwnProperty('birthday')) { 
                         data.birthday = moment(new Date(data.birthday)).format("YYYY-MM-DD"); 
@@ -201,6 +222,28 @@ export class CustomersHandler implements Handler{
             (control:any, user:any, conn:any, bean:string, data:any, id:string, files:any, flowback:Function, callback:Function) => {
                 
                 if(data){
+                    
+                    /* == INPUT VALIDATION == */
+                    let activity = {
+                        controller: "CustomerController",
+                        method: "updateCustomer",
+                        requestParams: data,
+                        response: {}
+                    };
+                    let vo: any = data;
+
+                    let validator = conn.getValidator();
+                    let vres =validator.validate(vo,UpdateCustomerValidation);
+
+                    if(!vres.valid) {
+                        console.log(`ajv errors:`,vres);
+                        let err = vres.errors.map((e) => e.schema.errorMessage ?? e.stack);
+                        activity.response = { isSucces: false, success: false, message: 'update.failed', result: "there are missing(required) or invalid input customer data", errors:err};
+                        AppHelper.log('UPDATE CUSTOMER', activity );
+                        callback(activity.response);
+                        return;
+                    }
+                    /* == INPUT VALIDATION == */
 
                    PolicyHelper.validatePlan(data, (v)=>{
                         user.planValid = v.success;

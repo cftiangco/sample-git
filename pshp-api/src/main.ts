@@ -163,7 +163,14 @@ async function bootstrap() {
 		}
 	}
 
-  	app.use('/'+process.env['SERVICE_NAMESPACE']+'/api-docs', swaggerUi.serve, swaggerUi.setup(null, options));  
+	/* crimson */
+  	app.use('/'+process.env['SERVICE_NAMESPACE']+'/api-docs', swaggerUi.serve, swaggerUi.setup(null, options));
+	
+	  app.use((req:any,res:any,next:any) => {
+		res.removeHeader("Server");
+     	next();
+	})
+	/* crimson */
   
 	if (process.env.ENABLE_CRON_JOBS=='Yes') {
 

@@ -445,6 +445,13 @@ export class BeanController {
                             //console.log("processRequest Payload:", payload);  
                             if (payload.hasOwnProperty('landbot') && payload.landbot==1) {
                                 //res.setHeader('Access-Control-Allow-Origin', 'https://chats.landbot.io');
+
+                                /* crimson */
+                                res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
+                                res.setHeader('X-Frame-Options', "SAMEORIGIN");
+                                res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                                /* crimson */
+
                                 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
                                 res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Accept');
                                 res.setHeader('Access-Control-Allow-Credentials', true);
@@ -489,6 +496,11 @@ export class BeanController {
                             //     res.setHeader('Access-Control-Allow-Credentials', true);
                             // }
                             else {
+
+                                /* crimson */
+                                res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                                /* crimson */
+
                                 console.log("INVALID HEADERS:", headers, params);
 
                                 res.setHeader('Access-Control-Allow-Origin', 'forbidden');
@@ -503,14 +515,28 @@ export class BeanController {
                         var actionsWithCSP = ["id-upload", "link", "status", "create"];
                         
                         if (beanWithCSP.includes(bean) && actionsWithCSP.includes(action) ) {
+
+                            /* crimson */
+                            res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                            /* crimson */
+
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
                             res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
                         }
                         else if (action=="premium") {
+                            /* crimson */
+                            res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                            /* crimson */
+
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
                             res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
                         }
                         else {
+                            /* crimson */
+                            res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                            res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
+                            /* crimson */
+                            
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
                         }
 

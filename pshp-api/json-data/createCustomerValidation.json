@@ -1,0 +1,459 @@
+{
+    "id": "/CreateCustomerValidation",
+    "type": "object",
+    "properties": {
+        "visitorId": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "errorMessage": "visitorId - Invalid input format",
+            "pattern":"^[0-9]*$"
+        },
+        "isProfiled": {
+            "type": "string",
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "isProfiled - Invalid input format"
+        },
+        "isSubscribed": {
+            "type": "string",
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "isSubscribed - Invalid input format"
+        },
+        "isPaid": {
+            "type": "string",
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$"
+        },
+        "firstname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "pattern": "^[#.0-9a-zA-Z\\s,-]+$",
+            "errorMessage": "firstname - Invalid input format"
+        },
+        "middlename": {
+            "type": "string",
+            "required": true,
+            "minLength": 0,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "middlename - Invalid input format"
+        },
+        "lastname": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "pattern": "^[#.0-9a-zA-Z\\s,-]+$",
+            "errorMessage": "lastname - Invalid input format"
+        },
+        "salutation": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "salutation - Invalid input format"
+        },
+        "gender": {
+            "type": "string",
+            "required": true,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "gender - Invalid input format"
+        },
+        "birthday": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^(\\d+-?)+\\d+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "birthday - Invalid input format"
+        },
+        "age": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern": "^[0-9]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "age - Invalid input format"
+        },
+        "secondBeneSalutation": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneSalutation - Invalid input format"
+        },
+        "secondBeneFirstname": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneFirstname - Invalid input format"
+        },
+        "secondBeneMiddlename": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneMiddlename - Invalid input format"
+        },
+        "secondBeneLastname": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneLastname - Invalid input format"
+        },
+        "secondBeneTypeOfBeneficiary": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneTypeOfBeneficiary - Invalid input format"
+        },
+        "secondBeneBirthday": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^(\\d+-?)+\\d+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneBirthday - Invalid input format"
+        },
+        "secondBeneAge": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern": "^[0-9]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneAge - Invalid input format"
+        },
+        "agentCode": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "agentCode - Invalid input format"
+        },
+        "agentName": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "agentName - Invalid input format"
+        },
+        "agentFirstName": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "agentFirstName - Invalid input format"
+        },
+        "agentLastName": {
+            "type": ["string","null"],
+            "required": false,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "agentLastName - Invalid input format"
+        },
+        "assignAgent": {
+            "type": ["string","null"],
+            "required": false,
+            "pattern": "^[#.0-9a-zA-Z\\s,-]+$",
+            "errorMessage": "assignAgent - Invalid input format"
+        },
+        "placeSigned": {
+            "type": ["string","null"],
+            "required": false,
+            "pattern": "^[#.0-9a-zA-Z\\s,-]+$",
+            "errorMessage": "placeSigned - Invalid input format"
+        },
+        "agreedOnMedInfo": {
+            "type": ["string","null"],
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "agreedOnMedInfo": "secondBeneAddress - Invalid input format"
+        },
+        "landbot": {
+            "type": ["number","null"],
+            "required": false,
+            "nullable":true,
+            "errorMessage": "landbot - Invalid input format (input must be a number)",
+            "pattern":"^[0-9]*$"
+        },
+        "country": {
+            "type": ["string","null"],
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "country - Invalid input format"
+        },
+        "civilStatus": {
+            "type": ["string","null"],
+            "required": false,
+            "pattern": "^[a-zA-Z\\s]*$",
+            "errorMessage": "civilStatus - Invalid input format"
+        },
+        "secondBeneType": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneType - Invalid input format"
+        },
+        "secondBeneGender": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneGender - Invalid input format"
+        },
+        "secondBeneDesignation": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneDesignation - Invalid input format"
+        },
+        "secondBeneIsSameAddressWithPO": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneIsSameAddressWithPO - Invalid input format"
+        },
+        "secondBeneAddress": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneAddress - Invalid input format"
+        },
+        "secondBeneStreet": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneStreet - Invalid input format"
+        },
+        "secondBeneProvCity": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneProvCity - Invalid input format"
+        },
+        "secondBeneLocation": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneLocation - Invalid input format"
+        },
+        "secondBeneZipcode": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneZipcode - Invalid input format"
+        },
+        "secondBeneRelationship": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneRelationship - Invalid input format"
+        },
+        "secondBeneShare": {
+            "type": ["string","null"],
+            "required": false,
+            "nullable":true,
+            "oneOf": [
+                {
+                    "maxLength": 0
+                },
+                {
+                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "minLength": 1
+                }
+            ],
+            "errorMessage": "secondBeneShare - Invalid input format"
+        }
+    }
+}
