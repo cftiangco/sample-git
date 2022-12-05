@@ -329,7 +329,7 @@
                     "maxLength": 0
                 },
                 {
-                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "pattern":"^[#.()/0-9a-zA-Z\\s,-]+$",
                     "minLength": 1
                 }
             ],
@@ -344,7 +344,7 @@
                     "maxLength": 0
                 },
                 {
-                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "pattern":"^[#.()/0-9a-zA-Z\\s,-]+$",
                     "minLength": 1
                 }
             ],
@@ -359,7 +359,7 @@
                     "maxLength": 0
                 },
                 {
-                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "pattern":"^[#.()/0-9a-zA-Z\\s,-]+$",
                     "minLength": 1
                 }
             ],
@@ -374,7 +374,7 @@
                     "maxLength": 0
                 },
                 {
-                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "pattern":"^[#.()/0-9a-zA-Z\\s,-]+$",
                     "minLength": 1
                 }
             ],
@@ -404,7 +404,7 @@
                     "maxLength": 0
                 },
                 {
-                    "pattern":"^[#.0-9a-zA-Z\\s,-]+$",
+                    "pattern":"^[#.()/0-9a-zA-Z\\s,-]+$",
                     "minLength": 1
                 }
             ],
