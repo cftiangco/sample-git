@@ -450,6 +450,8 @@ export class BeanController {
                                 res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
                                 res.setHeader('X-Frame-Options', "SAMEORIGIN");
                                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                                res.setHeader('Referrer-Policy', 'same-origin');
+                                res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
                                 /* crimson */
 
                                 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -498,7 +500,11 @@ export class BeanController {
                             else {
 
                                 /* crimson */
+                                res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
+                                res.setHeader('X-Frame-Options', "SAMEORIGIN");
                                 res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                                res.setHeader('Referrer-Policy', 'same-origin');
+                                res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
                                 /* crimson */
 
                                 console.log("INVALID HEADERS:", headers, params);
@@ -518,6 +524,8 @@ export class BeanController {
 
                             /* crimson */
                             res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                            res.setHeader('Referrer-Policy', 'same-origin');
+                            res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
                             /* crimson */
 
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
@@ -526,6 +534,8 @@ export class BeanController {
                         else if (action=="premium") {
                             /* crimson */
                             res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
+                            res.setHeader('Referrer-Policy', 'same-origin');
+                            res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
                             /* crimson */
 
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
@@ -535,6 +545,8 @@ export class BeanController {
                             /* crimson */
                             res.setHeader('Cache-control', 'no-cache, no-store, must-revalidate');
                             res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
+                            res.setHeader('Referrer-Policy', 'same-origin');
+                            res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
                             /* crimson */
                             
                             res.setHeader('X-Frame-Options', "SAMEORIGIN");
