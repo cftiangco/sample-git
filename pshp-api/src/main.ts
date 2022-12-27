@@ -166,8 +166,17 @@ async function bootstrap() {
 	/* crimson */
   	app.use('/'+process.env['SERVICE_NAMESPACE']+'/api-docs', swaggerUi.serve, swaggerUi.setup(null, options));
 	
-	  app.use((req:any,res:any,next:any) => {
+	app.use((req:any,res:any,next:any) => {
+		/* crimson */
+		if(req.url === "/") {
+			 res.setHeader('Content-Security-Policy', "default-src 'self' unpkg.com;script-src 'self';object-src 'none';upgrade-insecure-requests;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;script-src-attr 'none';style-src 'self' https: 'unsafe-inline'" );
+			 res.setHeader('X-Frame-Options', "SAMEORIGIN");
+			 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+			 res.setHeader('Referrer-Policy', 'same-origin');
+			 res.setHeader('Permissions-Policy', `camera=(), microphone=(), geolocation=("${process.env.BASE_WEB_URL}")`);
+		}
 		res.removeHeader("Server");
+		/* crimson */
      	next();
 	})
 	/* crimson */
